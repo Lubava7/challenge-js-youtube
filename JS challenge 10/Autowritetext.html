@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Write text</title>
+  </head>
+  <body>
+    <div class="auto"></div>
+    <script>
+      let text = "I love JavaScript and this challenge! <3  ";
+      let auto = document.querySelector(".auto");
+
+      let index = 0;
+      function writeText() {
+        auto.innerText = text.slice(0, index);
+        index++;
+        if (index > text.length) {
+          index = 0;
+        }
+      }
+      setInterval(writeText, 100);
+    </script>
+    <style>
+      body {
+        background-color: rgb(255, 251, 21);
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 35px;
+        margin: 0;
+      }
+      div {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </body>
+</html>
+
+<!-- Auto write text
+    text
+    index
+    show text based on index
+    increment index
+ -->
+<!-- можно сделать это лучше
+можно сделать такой эффект чтобы при автонаборе букв
+он как бы перебирал каждую букву пока не найдет нужную 
+перед тем как двигаться к следующей букве
+
+чтобы либо был эффект набор текста кк в старых играх или на мобилке
+где ты много раз жмешь на кнопку прежде чем найдешь нужную нажимаешь ок
+и переходишь к следующей букве
+
+как это реализовать?
+мб сделать массив а в нем еще внутри несколько массивов,
+ чтобы он перебирал буквы пока не появится нужная нам-->

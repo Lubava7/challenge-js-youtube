@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/9efc999c96.js"
+      ;
+      crossorigin="anonymous"
+      ;
+    ></script>
+  </head>
+
+  <!-- button + humburger icon
+  menu > li > a > hidden
+toggle on click
+animation-->
+
+  <body>
+    <button>
+      <i class="fas fa-hamburger"></i>
+    </button>
+    <select style="display: none" name="" id="showInDropDown">
+      <option value="">hello</option>
+      <option value="">how r u</option>
+    </select>
+
+    <script>
+      let butt = document.querySelector("button");
+
+      butt.addEventListener("click", function (event) {
+        document.getElementById("showInDropDown").style.display = "block";
+      });
+      butt.addEventListener("dblclick", function (event) {
+        document.getElementById("showInDropDown").style.display = "none";
+      });
+    </script>
+    <style></style>
+  </body>
+</html>

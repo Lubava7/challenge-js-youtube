@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>humburg button</title>
+    <script
+      src="https://kit.fontawesome.com/9efc999c96.js"
+      ;
+      crossorigin="anonymous"
+      ;
+    ></script>
+  </head>
+
+  <!-- ОСВОИТЬ АДАПТИВНУЮ ВЕРСТКУ -->
+  <body>
+    <p class="parag">
+      Свойство z-index определяет положение элемента и нижестоящих элементов по
+      оси z. В случае перекрытия элементов, это значение определяет порядок
+      наложения. В общем случае, элементы с большим z-index перекрывают элементы
+      с меньшим.
+    </p>
+    <p>
+      Если вы сохраните и обновите на данном этапе, в результате вы совсем не
+      увидите изменений. Так как же вам модифицировать положение? Вам необходимо
+      использовать свойства top, bottom, left (en-US), и right которые мы
+      объясним в следующем разделе.
+    </p>
+
+    <button><i class="fas fa-hamburger"></i></button>
+    <div></div>
+    <nav>
+      <ul>
+        <li>humburger</li>
+        <li>cheeseburger</li>
+        <li>chikenburger</li>
+        <li>bigburger</li>
+      </ul>
+    </nav>
+    <div></div>
+    <script>
+      let butt = document.querySelector("button");
+      let nav = document.querySelector("nav");
+      let div = document.querySelector("div");
+
+      butt.addEventListener("click", function (event) {
+        nav.classList.toggle("active");
+        butt.classList.toggle("active");
+        div.classList.toggle("active");
+      });
+    </script>
+    <style>
+      html {
+        display: flex;
+      }
+      button {
+        border: none;
+        background-color: violet;
+        position: fixed;
+        border-radius: 20%;
+        margin-top: 10%;
+        right: 0;
+        z-index: 15;
+        transform: translateX(0px);
+        transition: 1s all;
+      }
+      button.active {
+        transform: translateX(-150px);
+      }
+
+      nav {
+        background-color: violet;
+        height: 100%;
+        width: 150px;
+        position: fixed;
+        margin: 0% 0% 0% 80%;
+        transform: translateX(300px);
+        transition: 1s all;
+        /* border-radius: 20%; */
+        /* позиционирование сделать один див поверх другого рзных цветов */
+      }
+      p {
+        background-color: burlywood;
+      }
+      .parag {
+        background-color: cadetblue;
+        border: 2px solid blue;
+        position: relative;
+        top: 30px;
+        left: 30px;
+      }
+
+      /* div {
+        background-color: burlywood;
+        height: 100%;
+        width: 150px;
+        position: fixed;
+        margin: 0% 0% 0% 80%;
+        transform: translateX(300px);
+        transition: 1s all;
+        position: relative;
+      }
+      div.active {
+        transform: translateX(150px);
+        /* position: relative; */
+      /* bottom: 300px;
+        left: 300px; */
+      /* } */
+      nav.active {
+        transform: translateX(150px);
+      }
+      ul {
+        list-style-type: none;
+      }
+      li {
+        padding: 1%;
+      }
+    </style>
+  </body>
+</html>
